@@ -20,12 +20,27 @@ const monthByNumber = (mes) => { return MESES[mes] }
 function saludo() {
     const fecha = new Date()
     const hora = fecha.getHours()
-    const n_dia = fecha.getDay()
+    const numeroDia = fecha.getDay()
     const dia = fecha.getDate()
     const mes = fecha.getMonth()
     const ano = fecha.getFullYear()
 
-        console.log(n_dia)
+    let p = 3
+    console.log(p, numeroDia)
+
+    const image = document.querySelector(".ventana img")
+
+    switch (p) {
+        case 0: image.style.top = '-270px'; break;
+        case 1: image.style.top = '-10px'; break;
+        case 2: image.style.top = '-54px'; break;
+        case 3: image.style.top = '-96px'; break;
+        case 4: image.style.top = '-140px'; break;
+        case 5: image.style.top = '-184px'; break;
+        case 6: image.style.top = '-228px'; break;
+        
+    }
+
     // Refactorizar esto en una funcion que reciba hora y devuelva los valores
     const estiloHora = {
         styleName: 'mañana',
