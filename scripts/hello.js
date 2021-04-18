@@ -23,13 +23,13 @@ function imagenDia(numeroDelDia){
     const image = document.querySelector(".ventana img")
 
     switch (numeroDelDia) {
-        case 0: image.style.top = '-270px'; break;
-        case 1: image.style.top = '-10px'; break;
-        case 2: image.style.top = '-54px'; break;
-        case 3: image.style.top = '-96px'; break;
-        case 4: image.style.top = '-140px'; break;
-        case 5: image.style.top = '-184px'; break;
-        case 6: image.style.top = '-228px'; break;
+        case 0: image.style.top = '-270px'; image.classList.add("domingo"); break;
+        case 1: image.style.top = '-10px'; image.classList.add("lunes"); break;
+        case 2: image.style.top = '-54px'; image.classList.add("martes"); break;
+        case 3: image.style.top = '-96px'; image.classList.add("miercoles"); break;
+        case 4: image.style.top = '-140px'; image.classList.add("jueves"); break;
+        case 5: image.style.top = '-184px'; image.classList.add("viernes"); break;
+        case 6: image.style.top = '-228px'; image.classList.add("sabado"); break;
         
     }
 
