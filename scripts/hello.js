@@ -14,7 +14,7 @@ const MESES = [
     'Noviembre',
     'Diciembre'
 ]
-
+// funcion flecha que pone el mes de acuerdo a date()
 const monthByNumber = (mes) => { return MESES[mes] }
 
 function imagenDia(numeroDelDia){
