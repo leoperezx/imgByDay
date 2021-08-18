@@ -3,7 +3,7 @@ Estilo de index.html "numeroDia"
 */
 
 body {
-    background-color: rgb(247, 149, 20);
+    
     font-family:Helvetica,Futura,Arial,Verdana,sans-serif;
 }
 .contenedor {
@@ -14,19 +14,33 @@ body {
     justify-content: center;
 }
 .hello{
-    font-size: 18pt;
+    font-size: 48pt;
 }
 .ventana{
+    margin-top: 50px;
     height: 46px; /* cada 46 px de altura cambia de dia la imangen */
-    border:2px solid rgb(0, 0, 0);    
+    width: 250px;
+    border:2px solid rgb(4, 1, 0);    
     overflow: hidden;
+
 }
 
 .ventana img {
     position: relative;
+    margin-left: -3px;
     display: block;
 }
 
 .today{
     font-size: 18pt;
+}
+
+.morning {
+    background-color: rgb(46, 137, 255);
+}
+.afternoon {
+    background-color: rgb(1, 28, 233);
+}
+.night {
+    background-color: rgb(1, 22, 41);
 }

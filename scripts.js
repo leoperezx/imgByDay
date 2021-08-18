@@ -35,28 +35,30 @@ function imagenDia(numeroDelDia){
 
 }
 
-function saludo() {
-    const fecha = new Date()
-    const hora = fecha.getHours()
-    const numeroDia = fecha.getDay()
-    const dia = fecha.getDate()
-    const mes = fecha.getMonth()
-    const ano = fecha.getFullYear()
-
-    imagenDia(numeroDia)
-
-    // Refactorizar esto en una funcion que reciba hora y devuelva los valores
+function obtenerSaludo(hora_actual,dia_actual,mes_actual,ano_actual){
+    
     const estiloHora = { styleName: 'mañana', saludo: 'Buenos días' }
-    if (hora < 13) { estiloHora.saludo = "Buenos días"; estiloHora.styleName = "mañana" }
-    else if (hora < 19) { estiloHora.saludo = "Buenas tardes"; estiloHora.styleName = "tarde" }
-    else if (hora < 24) { estiloHora.saludo = "Buenas noches"; estiloHora.styleName = "noche" }
+    if (hora_actual < 13) { estiloHora.saludo = "Buenos días"; estiloHora.styleName = "morning" }
+    else if (hora_actual < 19) { estiloHora.saludo = "Buenas tardes"; estiloHora.styleName = "afternoon" }
+    else if (hora_actual < 24) { estiloHora.saludo = "Buenas noches"; estiloHora.styleName = "night" }
 
     document.querySelector(".hello").innerHTML = estiloHora.saludo
-    document.querySelector(".today").innerHTML = `Hoy es ${dia} de ${monthByNumber(mes)} de ${ano}`
-    document.body.classList.add(estiloHora.styleName)
-
+    document.querySelector(".today").innerHTML = `Hoy es ${dia_actual} de ${monthByNumber(mes_actual)} de ${ano_actual}`
+    document.querySelector(".ventana").classList.add(estiloHora.styleName)
 }
 
 
 
-saludo()
+function obtenerFecha() {
+    const fecha = new Date()
+    const numeroDia = fecha.getDay()
+    const hora = fecha.getHours()
+    const dia = fecha.getDate()
+    const mes = fecha.getMonth()
+    const ano = fecha.getFullYear()
+    
+    imagenDia(numeroDia)
+    obtenerSaludo(hora,dia,mes,ano)
+}
+
+obtenerFecha()
